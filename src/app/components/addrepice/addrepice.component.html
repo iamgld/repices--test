@@ -1,0 +1,69 @@
+<article class="addrepice container">
+  <div class="row">
+    <div class="col">
+      <div class="card text-white bg-primary">
+        <header class="card-header">
+          <h4 class="mb-0">New repice</h4>
+        </header>
+        <div class="card-body">
+          <form (submit)="onSubmitForAddRepice(repice)">
+
+            <fieldset>
+              <div class="form-group">
+                <label class="w-100">
+                  <span>Title</span>
+                  <input required [(ngModel)]="repice.title" class="form-control" type="text" name="title"
+                    placeholder="Title of repice">
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label class="w-100">
+                  <span>Description</span>
+                  <textarea [(ngModel)]="repice.description" class="form-control" name="description"
+                    placeholder="Description of repice" rows="3">
+                  </textarea>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label class="w-100">
+                  <span>Ingredients</span>
+                  <textarea [(ngModel)]="repice.ingredients" class="form-control" name="ingredients"
+                    placeholder="Ingredients of repice" rows="5">
+                  </textarea>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label class="w-100">
+                  <span>Preparation</span>
+                  <textarea [(ngModel)]="repice.preparation" class="form-control" name="preparation"
+                    placeholder="Preparation of repice" rows="10">
+                  </textarea>
+                </label>
+              </div>
+
+              <div class="form-group">
+                <label class="w-100">
+                  <span>Season</span>
+                  <select [(ngModel)]="repice.season" class="form-control" name="season">
+                    <option>Summer</option>
+                    <option>Autumn</option>
+                    <option>Winter</option>
+                    <option>Spring</option>
+                  </select>
+                </label>
+              </div>
+            </fieldset>
+
+            <button *ngIf="repice.title.length === 0" disabled type="submit" class="btn btn-success w-100">send</button>
+            <button *ngIf="repice.title.length > 0" type="submit" class="btn btn-success w-100">send</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</article>

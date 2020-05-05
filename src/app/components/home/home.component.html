@@ -1,0 +1,39 @@
+<article class="home">
+
+  <section class="alert alert-dismissible alert-primary">
+    <button type="button" class="close h-100" data-dismiss="alert">&times;</button>
+    <h4 class="alert-heading mb-0">Incredible Recipes</h4>
+  </section>
+
+  <section #Repices>
+
+    <article *ngFor="let repice of repices" class="card text-white bg-primary">
+
+      <section class="card-body">
+        <div class="media">
+          <img style="max-width: 60px;" class="rounded img-fluid mr-3"
+            src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+
+          <div class="media-body">
+            <h4>
+              <a routerLink="/details/{{repice.id}}" class="text-link">
+                {{repice.title}}
+              </a>
+            </h4>
+            <p>
+              <time datetime="2016-1-1">{{repice.datePublication | date}}</time>
+              <strong class="ml-1 badge badge-info">{{repice.season}}</strong>
+            </p>
+          </div>
+        </div>
+        <p>
+          {{repice.description}}
+          <a routerLink="/details/{{repice.id}}" class="text-link">leer mas</a>
+        </p>
+      </section>
+
+    </article>
+
+  </section>
+
+</article>

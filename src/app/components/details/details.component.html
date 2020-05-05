@@ -1,0 +1,32 @@
+<article class="details container">
+  <div *ngIf="idUserLogin === repice.userId" class="row mb-3">
+    <div class="col-md-8 mx-auto text-right">
+      <div class="buttons has-addons is-right">
+        <button routerLink="/edit/{{repice.id}}" class="btn btn-success mr-3">
+          <i class="fas fa-edit mr-1"></i>
+          <span>Edit</span>
+        </button>
+        <button (click)="onClickDelete()" class="btn btn-danger">
+          <i class="fas fa-trash-alt mr-1"></i>
+          <span>Delete</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-md-8 mx-auto">
+      <h3 class="text-primary">{{repice.title}}</h3>
+      <p>
+        {{repice.datePublication | date}} for
+        <strong class="text-primary">{{repice.userName}}</strong>
+      </p>
+      <p>{{repice.description}}</p>
+      <p class="">Ingregients:</p>
+      <p>{{repice.ingredients}}</p>
+      <p class="">Preparation:</p>
+      <p>{{repice.preparation}}</p>
+    </div>
+  </div>
+
+</article>
